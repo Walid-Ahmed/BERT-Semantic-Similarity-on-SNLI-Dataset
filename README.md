@@ -1,5 +1,5 @@
 # Semantic-Similarity
-Semantic Simillarity
+
 
 
 # Dealing with similarity as a classification Problem
