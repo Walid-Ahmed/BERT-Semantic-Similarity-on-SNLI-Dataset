@@ -2,7 +2,7 @@
 
 
 
-Here's a brief explanation of what each script in the repository does, based on the provided content:
+## Brief explanation of Scripts
 
 ### 1. `train.py`
 
