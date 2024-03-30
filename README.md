@@ -2,6 +2,40 @@
 
 
 
+Here's a brief explanation of what each script in the repository does, based on the provided content:
+
+### 1. `train.py`
+
+This script is the main entry point for training a BERT model on the semantic similarity task using the SNLI dataset. It performs several key functions:
+
+- **Data Preparation**: It calls a function `preprocess()` (expected to be defined in `preprocess.py`) to load and preprocess the SNLI dataset into training, validation, and testing sets.
+- **Model Initialization**: Initializes a BERT model specifically for sequence classification with a predefined number of labels (three, in this case, corresponding to entailment, contradiction, and neutral).
+- **Training Loop**: Implements the training loop, where the model is trained on the dataset using a DataLoader. It also calculates and stores the training loss after each epoch.
+- **Loss Visualization**: Calls the `plot()` function to visualize the training loss over epochs and saves the plot to the `results` folder.
+- **Model Saving**: Saves the trained model to disk for future use.
+
+### 2. `preprocess.py`
+
+This script is responsible for loading and preprocessing the SNLI dataset. It outlines several steps:
+
+- **Dataset Loading**: Utilizes Hugging Face's `datasets` library to load the SNLI dataset.
+- **Data Cleaning**: Removes rows from the dataset where the label is undefined or not applicable (-1).
+- **Data Preparation**: Converts the dataset into lists of premises, hypotheses, and labels, and returns these lists for further processing.
+
+The `preprocess` function is designed to be flexible enough to handle different splits of the data (train, validation, test) by accepting a `data_split` argument.
+
+### 3. `TextDataset.py`
+
+This file defines a custom PyTorch `Dataset` class, `TextDataset`, tailored for tokenizing text data for use with BERT models. It includes important functionality:
+
+- **Initialization**: Takes lists of texts and labels as input, along with a maximum sequence length, and initializes a BERT tokenizer.
+- **Length**: Provides the number of items in the dataset.
+- **Get Item**: Tokenizes a specific item (text) from the dataset, preparing it for input to BERT. This includes generating input IDs, attention masks, and token type IDs, along with the corresponding label for the text.
+
+The `TextDataset` class is crucial for efficiently managing and preparing the data for training and evaluation within the PyTorch framework.
+
+Each script is designed to fulfill specific roles within the training pipeline, ensuring modular and maintainable code structure for the semantic similarity task using BERT and the SNLI dataset.
+
 ## Dealing with similarity as a classification Problem
 
 Classifying a pair of sentences as similar or not similar using BERT involves a few steps, focusing on how to effectively represent the sentence pair and then classify them based on their similarity. Here's a high-level approach to tackle this problem:
