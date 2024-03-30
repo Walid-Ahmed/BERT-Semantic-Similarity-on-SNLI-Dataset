@@ -1,9 +1,3 @@
-# Semantic-Similarity
-
-
-Here's the streamlined README.md for your GitHub repository, with the sections on contributing, license, and contact removed as requested.
-
----
 
 # BERT Semantic Similarity on SNLI Dataset
 
