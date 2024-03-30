@@ -3,7 +3,6 @@ from transformers import BertForSequenceClassification
 from transformers import BertTokenizer
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from tqdm import tqdm
-from torch.utils.data import TensorDataset
 import os
 import matplotlib.pyplot as plt
 from datasets import load_dataset
