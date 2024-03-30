@@ -1,3 +1,29 @@
+
+def plot(loss_values,epochs):
+  # Plotting the training loss
+  plt.figure(figsize=(10, 6))
+  plt.plot(loss_values, 'b-o')
+
+  plt.title("Training Loss-BERT Sentiment Analysis ")
+  plt.xlabel("Epoch")
+  plt.ylabel("Loss")
+  plt.xticks(range(1, epochs+1))
+
+
+    # Define the folder name
+  folder_name = "results"
+
+  # Check if the folder exists, if not, create it
+  if not os.path.exists(folder_name):
+      os.makedirs(folder_name)
+      print("Folder results created.")
+  else:
+      print("Folder results already exists.")
+  plt.savefig(os.path.join("results", 'Training_Loss.png'))
+  print("[INFO] Training Loss saved to file Training_Loss.png in results folder")
+  plt.show()
+
+
 def train():
 
   text_train,labels_train=preprocess(data_split="train")
