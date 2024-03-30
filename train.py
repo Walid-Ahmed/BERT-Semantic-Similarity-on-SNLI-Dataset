@@ -1,3 +1,4 @@
+from preprocess import preprocess
 import torch
 from transformers import BertForSequenceClassification
 from transformers import BertTokenizer
@@ -5,6 +6,9 @@ from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from tqdm import tqdm
 import os
 import matplotlib.pyplot as plt
+from TextDataset import TextDataset
+
+
 
 def plot(loss_values,epochs):
   # Plotting the training loss
@@ -67,6 +71,7 @@ def train():
     lr = 1e-5, #2e-5 to 5e-5
     eps = 1e-8)
   
+  epochs=3
 
 
 
