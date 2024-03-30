@@ -2,7 +2,7 @@
 
 
 
-# Dealing with similarity as a classification Problem
+## Dealing with similarity as a classification Problem
 
 Classifying a pair of sentences as similar or not similar using BERT involves a few steps, focusing on how to effectively represent the sentence pair and then classify them based on their similarity. Here's a high-level approach to tackle this problem:
 
