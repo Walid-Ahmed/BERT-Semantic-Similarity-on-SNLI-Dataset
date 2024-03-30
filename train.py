@@ -99,3 +99,7 @@ def train():
   print("[INFO] Model saved to file  Bert_ft.pt")
   plot(loss_values,epochs)
 
+
+if __name__ == "__main__":
+  train()
+
