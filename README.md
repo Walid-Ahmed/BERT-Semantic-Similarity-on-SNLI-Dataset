@@ -1,6 +1,38 @@
 # Semantic-Similarity
 
+BERT Semantic Similarity on SNLI Dataset
+This repository hosts a PyTorch implementation designed for evaluating semantic similarity between sentence pairs using the Stanford Natural Language Inference (SNLI) dataset with a BERT model. The SNLI dataset comprises 570k human-written English sentence pairs, each manually labeled as entailment, contradiction, or neutral, providing a robust foundation for developing models capable of understanding nuanced textual relationships.
 
+About the SNLI Dataset
+The SNLI dataset is essential for training models on natural language inference (NLI), which closely aligns with semantic similarity tasks. Each sentence pair in the dataset is annotated with labels that indicate whether the hypothesis sentence is an entailment, contradiction, or bears no relation (neutral) to the premise sentence. This setup provides a valuable framework for training models to discern semantic similarity within diverse textual contexts.
+
+Features
+Utilization of the SNLI dataset from Hugging Face, including predefined splits for training, validation, and testing.
+Adapting BERT for semantic similarity, leveraging sequence classification capabilities.
+Visualizing training progress through loss metrics.
+Saving the trained model for future inference or deployment in semantic similarity tasks.
+Installation
+Ensure Python 3.6 or newer is installed on your system. To install the required packages, run:
+
+bash
+Copy code
+pip install torch transformers tqdm matplotlib
+Usage
+Dataset Preparation: The SNLI dataset is automatically fetched from Hugging Face, complete with training, validation, and testing splits, streamlining the setup process for immediate use.
+
+Model Training:
+
+Start the training process with:
+
+bash
+Copy code
+python train.py
+The script trains the BERT model using the SNLI dataset, specifically focusing on learning representations that reflect semantic similarity between sentence pairs.
+
+Outputs: The model Bert_ft.pt and a training loss graph Training_Loss.png are saved in the results directory, encapsulating the training outcome and performance.
+
+Customization
+Experiment with different configurations, such as altering epochs, batch size, or learning rate adjustments, to explore how these variations impact the model's understanding of semantic similarity.
 
 ## Brief explanation of Scripts
 
